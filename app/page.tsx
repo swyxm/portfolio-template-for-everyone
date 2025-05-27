@@ -71,18 +71,18 @@ export default function Portfolio() {
 
   // Staggered animations
   const achievements = [
-    "launched a productivity app with 15k+ active users",
-    "$8k/month from freelance work building mvps for startups",
-    "placed 2nd at google developer challenge",
-    "contributed to vercel open source (merged 3 prs)",
-    "built and sold a chrome extension for low five figures",
+    "win #1",
+    "win #2",
+    "win #3",
+    "win #4",
+    "win #5",
   ]
 
   const projects = [
-    "mindflow.app - ai-powered note taking",
-    "devtools.so - curated developer resources",
-    "quickship.dev - react component starter kit",
-    "swayam.tools - collection of micro-tools",
+    "proj #1",
+    "proj #2",
+    "proj #3",
+    "proj #4",
   ]
 
   const [visibleAchievements, triggerAchievements] = useStaggeredList(achievements, 150)
