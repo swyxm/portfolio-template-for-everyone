@@ -333,7 +333,7 @@ export default function Portfolio() {
               achievementsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <h2 className="text-sm font-normal">recent wins:</h2>
+            <h2 className="text-sm font-normal">title1:</h2>
             <ul className="space-y-2 text-sm text-muted-foreground ml-4">
               {achievements.map((achievement, index) => (
                 <li
@@ -346,46 +346,46 @@ export default function Portfolio() {
                   •{" "}
                   {achievement.includes("freelance") ? (
                     <>
-                      $8k/month from{" "}
+                      $text{" "}
                       <Link
                         href="#"
                         className="text-slate-600 dark:text-slate-400 hover:underline underline-offset-2 transition-all duration-200"
                       >
-                        freelance work
+                        bolded shi
                       </Link>{" "}
-                      building mvps for startups
+                      some link
                     </>
                   ) : achievement.includes("google") ? (
                     <>
-                      placed 2nd at{" "}
+                      more text{" "}
                       <Link
                         href="#"
                         className="text-slate-600 dark:text-slate-400 hover:underline underline-offset-2 transition-all duration-200"
                       >
-                        google developer challenge
+                        some link
                       </Link>
                     </>
                   ) : achievement.includes("vercel") ? (
                     <>
-                      contributed to{" "}
+                      even more text{" "}
                       <Link
                         href="#"
                         className="text-slate-600 dark:text-slate-400 hover:underline underline-offset-2 transition-all duration-200"
                       >
-                        vercel
+                        some link
                       </Link>{" "}
-                      open source (merged 3 prs)
+                     type shi (merged 3 prs)
                     </>
                   ) : achievement.includes("chrome") ? (
                     <>
-                      built and sold{" "}
+                      built {" "}
                       <Link
                         href="#"
                         className="text-slate-600 dark:text-slate-400 hover:underline underline-offset-2 transition-all duration-200"
                       >
-                        a chrome extension
+                        je ne sais quoi
                       </Link>{" "}
-                      for low five figures
+                      more yap
                     </>
                   ) : (
                     achievement
@@ -433,8 +433,7 @@ export default function Portfolio() {
             }`}
           >
             <p className="hover:text-foreground transition-colors duration-300">
-              i believe in building fast, shipping faster. most ideas don't need months of planning - they need a
-              weekend and some caffeine.
+              deep philosophical
             </p>
           </section>
 
@@ -447,10 +446,10 @@ export default function Portfolio() {
           >
             <h2 className="text-sm font-normal">right now:</h2>
             <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-              deep in react server components, exploring ai integrations, and probably drinking too much coffee.
+             idk tbh.
             </p>
             <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-              always down to chat about startups, tech, or that weird bug you've been stuck on for hours.
+              down to chat fr.
             </p>
           </section>
 
@@ -481,21 +480,14 @@ export default function Portfolio() {
               {expandedSections.journey && (
                 <div className="ml-5 text-sm space-y-2 text-muted-foreground animate-in slide-in-from-top-2 duration-300">
                   <p className="hover:text-foreground transition-colors duration-300">
-                    started with html/css in high school. got obsessed with making things look pixel-perfect. then
-                    discovered javascript and everything clicked.
+                   insert
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    spent college building random projects - a spotify clone, a weather app, way too many todo lists.
-                    learned more from side projects than lectures.
+                    insert
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    dropped out junior year to work at a startup. best decision i ever made.
+                    insert
                   </p>
-                  {rainbowMode && (
-                    <p className="text-xs text-purple-400 animate-pulse mt-2">
-                      🌈 you found the rainbow! thanks for being curious.
-                    </p>
-                  )}
                 </div>
               )}
             </div>
@@ -516,15 +508,13 @@ export default function Portfolio() {
               {expandedSections.stack && (
                 <div className="ml-5 text-sm space-y-2 text-muted-foreground animate-in slide-in-from-top-2 duration-300">
                   <p className="hover:text-foreground transition-colors duration-300">
-                    react/next.js for frontend. typescript everywhere. tailwind for styling because life's too short for
-                    css-in-js debates.
+                    idk yet.
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    node.js + postgres for backend. prisma for orm. vercel for deployment because it just works.
-                    sometimes railway when i need more control.
+                    idk yet
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    figma for design. cursor for coding. linear for project management. notion for everything else.
+                    idkkk
                   </p>
                 </div>
               )}
@@ -550,16 +540,13 @@ export default function Portfolio() {
               {expandedSections.philosophy && (
                 <div className="ml-5 text-sm space-y-2 text-muted-foreground animate-in slide-in-from-top-2 duration-300">
                   <p className="hover:text-foreground transition-colors duration-300">
-                    ship early, iterate fast. user feedback beats internal debates every time. build for real problems,
-                    not imaginary ones.
+                    do i?
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    code should be readable by humans first, computers second. comments are for why, not what. tests are
-                    documentation that never lies.
+                    lol
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    remote-first but love good coffee shops. async communication over meetings. deep work over busy
-                    work.
+                    lollll
                   </p>
                 </div>
               )}
@@ -581,16 +568,13 @@ export default function Portfolio() {
               {expandedSections.future && (
                 <div className="ml-5 text-sm space-y-2 text-muted-foreground animate-in slide-in-from-top-2 duration-300">
                   <p className="hover:text-foreground transition-colors duration-300">
-                    building a small but profitable company. something that solves real problems for developers or
-                    creators.
+                    we shall see
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    want to write more - about building products, technical deep dives, maybe a newsletter. sharing
-                    knowledge feels good.
+                    words
                   </p>
                   <p className="hover:text-foreground transition-colors duration-300">
-                    eventually mentor other developers. remember what it felt like to be stuck on everything. want to
-                    help others get unstuck faster.
+                    words
                   </p>
                 </div>
               )}
