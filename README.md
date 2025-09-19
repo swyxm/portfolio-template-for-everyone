@@ -1,8 +1,6 @@
-# Deprecated Portfolio Template
+# Deprecated Portfolio Template now for Everyone!
 
-> **⚠️ This is a deprecated portfolio template for public use**
-
-A minimalist, slate-aesthetic portfolio website built with Next.js 15, React 19, and Tailwind CSS. This template was originally created to test [v0.dev](https://v0.dev) capabilities and has since been open-sourced for the community to fork and build upon.
+A minimalist, desconstructed, slate-aesthetic portfolio website built with Next.js 15, React 19, and Tailwind CSS. This template was originally created to test [v0.dev](https://v0.dev) capabilities and I've since open-sourced it for anyone to fork and build upon.
 
 ## ✨ Features
 
