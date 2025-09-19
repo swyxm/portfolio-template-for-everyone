@@ -4,9 +4,7 @@ import { Moon, Sun, ChevronDown, ChevronRight, Star, Sparkles } from "lucide-rea
 import { useTheme } from "next-themes"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { motion } from "motion/react"
 
-// Animation hook for intersection observer
 function useInView(threshold = 0.1) {
   const [isInView, setIsInView] = useState(false)
   const ref = useRef<HTMLElement>(null)
@@ -32,7 +30,6 @@ function useInView(threshold = 0.1) {
   return [ref, isInView] as const
 }
 
-// Staggered list animation hook
 function useStaggeredList(items: any[], delay = 100) {
   const [visibleItems, setVisibleItems] = useState<number[]>([])
   const [isTriggered, setIsTriggered] = useState(false)
@@ -55,12 +52,10 @@ export default function Portfolio() {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({})
   const [mounted, setMounted] = useState(false)
 
-  // Easter egg states
   const [logoClickCount, setLogoClickCount] = useState(0)
   const [rainbowMode, setRainbowMode] = useState(false)
   const [showStars, setShowStars] = useState(false)
 
-  // Animation refs
   const [headerRef, headerInView] = useInView(0.1)
   const [introRef, introInView] = useInView(0.2)
   const [achievementsRef, achievementsInView] = useInView(0.2)
@@ -69,7 +64,6 @@ export default function Portfolio() {
   const [statusRef, statusInView] = useInView(0.2)
   const [expandableRef, expandableInView] = useInView(0.2)
 
-  // Staggered animations
   const achievements = [
     "win #1",
     "win #2",
@@ -118,7 +112,6 @@ export default function Portfolio() {
     }))
   }
 
-  // Logo click handler for rainbow mode
   const handleLogoClick = () => {
     const newCount = logoClickCount + 1
     setLogoClickCount(newCount)
@@ -128,22 +121,19 @@ export default function Portfolio() {
     }
   }
 
-  // Star animation handler
   const handleStarClick = () => {
     setShowStars(true)
-    // Auto-hide after 10 seconds
     setTimeout(() => {
       setShowStars(false)
     }, 10000)
   }
+
   const duration = Math.min(100/logoClickCount, 300)
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Twinkling Stars Effect */}
       {showStars && (
         <div className="fixed inset-0 pointer-events-none z-10">
-          {/* Twinkling Stars */}
           {Array.from({ length: 20 }, (_, i) => (
             <Star
               key={`twinkle-${i}`}
@@ -160,9 +150,7 @@ export default function Portfolio() {
             />
           ))}
 
-          {/* Shooting Stars with Particle Trails */}
           {Array.from({ length: 3 }, (_, i) => {
-            // Different spawn positions along the left side
             const spawnPositions = [
               { left: "5%", top: "10%" }, // top-left
               { left: "8%", top: "50%" }, // middle-left
@@ -172,7 +160,7 @@ export default function Portfolio() {
 
             return (
               <div key={`shooting-group-${i}`} className="absolute">
-                {/* Main shooting star */}
+                {/* need to fix main shooorting star calculation ts look cooked */}
                 <div
                   className={`absolute w-2 h-2 bg-white rounded-full animate-shooting-star-${i + 1}`}
                   style={{
@@ -184,7 +172,6 @@ export default function Portfolio() {
                   }}
                 />
 
-                {/* Particle trail */}
                 {Array.from({ length: 8 }, (_, j) => (
                   <div
                     key={`particle-${i}-${j}`}
@@ -199,7 +186,6 @@ export default function Portfolio() {
                   />
                 ))}
 
-                {/* Sparkle particles */}
                 {Array.from({ length: 5 }, (_, k) => (
                   <div
                     key={`sparkle-${i}-${k}`}
@@ -227,12 +213,12 @@ export default function Portfolio() {
         }`}
       >
         <div
-        
         className={`w-4 h-4 rounded-sm cursor-pointer select-none transition-all hover:scale-125 ${
           logoClickCount > 0
-            ? `bg-gradient-to-r from-indigo-500 to-slate-500 animate-bounce duration-[${duration}ms] shadow-lg shadow-blue-500/30`
+            ? "bg-gradient-to-r from-indigo-500 to-slate-500 animate-bounce shadow-lg shadow-blue-500/30"
             : "bg-slate-600 dark:bg-slate-400 animate-pulse"
         } ${rainbowMode ? "animate-spin" : ""}`}
+        style={logoClickCount > 0 ? { animationDuration: `${duration}ms` } : {}}
         onClick={handleLogoClick}
         title={logoClickCount > 0 ? `clicks: ${logoClickCount}` : "try clicking me"}
       />
@@ -267,7 +253,6 @@ export default function Portfolio() {
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-600 dark:bg-slate-300 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
-          {/* Star Button */}
           <Button
             variant="ghost"
             size="sm"
@@ -290,10 +275,9 @@ export default function Portfolio() {
         </nav>
       </header>
 
-      {/* Main Content */}
       <main className="max-w-2xl mx-auto px-6 md:px-8 pb-16 relative z-20">
         <div className="space-y-8">
-          {/* Intro */}
+
           <section
             ref={introRef}
             className={`space-y-4 transition-all duration-1000 ease-out delay-200 ${
@@ -314,19 +298,18 @@ export default function Portfolio() {
               </span>
             </h1>
             <p className="text-sm text-muted-foreground">
-              i'm 19, based in{" "}
+              'i'm {'{age}'}, based in '
               <Link
                 href="#"
                 className="text-slate-600 dark:text-slate-400 hover:underline underline-offset-2 transition-all duration-200 hover:text-slate-800 dark:hover:text-slate-200"
               >
-                toronto & california 🇨🇦🇺🇸
+                {'{location}'} {'{country_emoji}'}
               </Link>
               .
             </p>
-            <p className="text-sm text-muted-foreground">i'm a csba major @ usc ✌️</p>
+            <p className="text-sm text-muted-foreground">i'm a {'{field}'} major @ {'{school}'} {'{mascot/uni emoji}'}</p>
           </section>
 
-          {/* Achievements */}
           <section
             ref={achievementsRef}
             className={`space-y-4 transition-all duration-1000 ease-out delay-300 ${
@@ -395,7 +378,6 @@ export default function Portfolio() {
             </ul>
           </section>
 
-          {/* Current Work */}
           <section
             ref={projectsRef}
             className={`space-y-4 transition-all duration-1000 ease-out delay-400 ${
@@ -425,7 +407,6 @@ export default function Portfolio() {
             </ul>
           </section>
 
-          {/* Philosophy */}
           <section
             ref={philosophyRef}
             className={`space-y-4 text-sm text-muted-foreground transition-all duration-1000 ease-out delay-500 ${
@@ -437,7 +418,6 @@ export default function Portfolio() {
             </p>
           </section>
 
-          {/* Current Status */}
           <section
             ref={statusRef}
             className={`space-y-4 transition-all duration-1000 ease-out delay-600 ${
@@ -453,7 +433,6 @@ export default function Portfolio() {
             </p>
           </section>
 
-          {/* Expandable Sections */}
           <section
             ref={expandableRef}
             className={`space-y-4 transition-all duration-1000 ease-out delay-700 ${
