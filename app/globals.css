@@ -81,7 +81,6 @@
   }
 }
 
-/* Matrix effect */
 .matrix-bg {
   background: radial-gradient(ellipse at center, rgba(0, 255, 0, 0.02) 0%, transparent 70%);
 }
@@ -101,7 +100,6 @@
   }
 }
 
-/* Twinkling stars animation */
 @keyframes twinkle {
   0%,
   100% {
@@ -138,7 +136,6 @@
   }
 }
 
-/* Shooting stars - from top-left going down-right */
 @keyframes shooting-star-1 {
   0% {
     transform: translateX(-100px) translateY(-50px) rotate(-45deg);
@@ -156,7 +153,6 @@
   }
 }
 
-/* Shooting stars - from left-center going right */
 @keyframes shooting-star-2 {
   0% {
     transform: translateX(-100px) translateY(0px) rotate(-15deg);
@@ -174,7 +170,6 @@
   }
 }
 
-/* Shooting stars - from bottom-left going up-right */
 @keyframes shooting-star-3 {
   0% {
     transform: translateX(-80px) translateY(50px) rotate(25deg);
@@ -192,7 +187,6 @@
   }
 }
 
-/* Meteor shower animations - various trajectories */
 @keyframes meteor-1 {
   0% {
     transform: translateX(-50px) translateY(-80px) rotate(-35deg);
@@ -329,7 +323,6 @@
   }
 }
 
-/* Particle trail animations matching their parent trajectories */
 @keyframes particle-trail-1 {
   0% {
     transform: translateX(-100px) translateY(-50px) rotate(-45deg) scale(1);
@@ -630,12 +623,10 @@
   animation: meteor-trail-8 2.6s linear infinite;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom selection */
 ::selection {
   background-color: hsl(210 7% 89%);
   color: hsl(210 6% 21%);
@@ -646,7 +637,6 @@ html {
   color: hsl(210 11% 91%);
 }
 
-/* Focus styles */
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid hsl(210 6% 21%);
@@ -659,7 +649,6 @@ a:focus-visible {
   outline-color: hsl(210 11% 91%);
 }
 
-/* Pulse animation for interactive elements */
 @keyframes gentle-pulse {
   0%,
   100% {
